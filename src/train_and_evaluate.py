@@ -9,7 +9,7 @@ import numpy as np
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import ElasticNet
-from get_data import read_params
+from get_data import read_param
 import argparse
 import joblib
 import json
@@ -23,7 +23,7 @@ def eval_metrics(actual, pred):
 
 
 def train_and_evaluate(config_path):
-    config = read_params(config_path)
+    config = read_param(config_path)
     test_data_path = config["split_data"]["test_path"]
     train_data_path = config["split_data"]["train_path"]
     random_state = config["base"]["random_state"]
